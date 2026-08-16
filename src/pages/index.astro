@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const posts = [
+	{
+		slug: 'hello-world',
+		title: 'Hello, world!',
+		description: 'The first post in this example app.',
+	},
+	{
+		slug: 'astro-basics',
+		title: 'Astro basics',
+		description: 'Components, layouts, and static generation.',
+	},
+	{
+		slug: 'markdown',
+		title: 'Markdown content',
+		description: 'Writing posts directly in Markdown.',
+	},
+];
+---
+
+<Layout title="Astro Example">
+	<h1>Welcome to Astro</h1>
+	<p>A tiny example app built with the Astro web framework.</p>
+
+	<section>
+		{posts.map((post) => (
+			<Card
+				title={post.title}
+				description={post.description}
+				href={`/blog/${post.slug}`}
+			/>
+		))}
+	</section>
+</Layout>
