@@ -5,6 +5,10 @@
     {
       "path": "/api/hello",
       "entrypoint": "hello.js"
+    },
+    {
+      "path": "/api/500",
+      "entrypoint": "500.js"
     }
   ]
 }
