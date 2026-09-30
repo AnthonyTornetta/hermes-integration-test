@@ -3,6 +3,7 @@ exports.handler = async (request) => {
   const name = query.get("name") ?? "world";
 
   console.log(process.env);
+  console.log("hi howee");
 
   return {
     status: 200,
