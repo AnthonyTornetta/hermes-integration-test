@@ -1,0 +1,1 @@
+{"version":1,"groups":[{"name":"dynamic-actions","routes":["/actions/[id]"],"maxReplicas":2}]}
