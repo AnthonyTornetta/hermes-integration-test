@@ -12,7 +12,11 @@
     },
     {
       "path": "/api/loop",
-      "entrypoint": "loop.js"
+      "entrypoint": "loop.js",
+      "settings": {
+        "max_concurrency": 10,
+        "timeout_seconds": 60
+      }
     }
   ]
 }
