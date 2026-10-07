@@ -1,1 +1,23 @@
-{"version":1,"groups":[{"name":"dynamic-actions","routes":["/actions/[id]"],"maxReplicas":2}]}
+{
+  "version": 1,
+  "groups": [
+    {
+      "name": "dynamic-actions",
+      "routes": [
+        "/actions/[id]"
+      ],
+      "maxReplicas": 1
+    }
+  ],
+  "defaults": {
+    "api": {
+      "maxReplicas": 1
+    },
+    "rendering": {
+      "maxReplicas": 1
+    },
+    "proxy": {
+      "maxReplicas": 1
+    }
+  }
+}
