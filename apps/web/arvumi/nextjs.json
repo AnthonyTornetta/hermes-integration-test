@@ -1,26 +1,38 @@
 {
   "version": 1,
-  "groups": [
-    {
-      "name": "dynamic-actions",
-      "routes": [
-        "/actions/[id]"
-      ],
-      "maxReplicas": 1
-    }
-  ],
   "defaults": {
     "api": {
-      "maxReplicas": 1
-    },
-    "rendering": {
-      "maxReplicas": 1
+      "maxReplicas": 1,
+      "timeoutSeconds": 3
     },
     "proxy": {
       "maxReplicas": 1
-    },
-    "images": {
-      "maxReplicas": 1
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/tick",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron/redirect",
+      "schedule": "0 0 29 2 *"
+    },
+    {
+      "path": "/api/cron/fail",
+      "schedule": "0 0 29 2 *"
+    },
+    {
+      "path": "/api/cron/slow",
+      "schedule": "0 0 29 2 *"
+    },
+    {
+      "path": "/api/cron/blocked",
+      "schedule": "0 0 29 2 *"
+    },
+    {
+      "path": "/api/cron/large",
+      "schedule": "0 0 29 2 *"
+    }
+  ]
 }
