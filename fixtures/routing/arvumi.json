@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "routing": {
+    "redirects": [
+      {
+        "source": "/old",
+        "destination": "/about",
+        "status": 308
+      },
+      {
+        "source": "/external",
+        "destination": "https://example.com/route?fixed=1",
+        "status": 307
+      },
+      {
+        "source": "/api/cron",
+        "destination": "/forbidden-target",
+        "status": 307
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/alias/:name",
+        "destination": "/pages/:name"
+      },
+      {
+        "source": "/call",
+        "destination": "/api/run?fixed=1"
+      },
+      {
+        "source": "/api/run",
+        "destination": "/api/projects"
+      },
+      {
+        "source": "/stream",
+        "destination": "/api/run?stream=1"
+      },
+      {
+        "source": "/api-to-static",
+        "destination": "/api/help"
+      },
+      {
+        "source": "/health",
+        "destination": "/pages/health"
+      },
+      {
+        "source": "/spa/:rest*",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/:rest*",
+        "headers": [
+          {
+            "key": "x-fixture-policy",
+            "value": "v1"
+          }
+        ]
+      },
+      {
+        "source": "/alias/:name",
+        "headers": [
+          {
+            "key": "x-common",
+            "value": "original-static"
+          },
+          {
+            "key": "cache-control",
+            "value": "public, max-age=60"
+          }
+        ]
+      },
+      {
+        "source": "/call",
+        "headers": [
+          {
+            "key": "x-common",
+            "value": "original-function"
+          }
+        ]
+      },
+      {
+        "source": "/stream",
+        "headers": [
+          {
+            "key": "x-common",
+            "value": "stream"
+          }
+        ]
+      },
+      {
+        "source": "/old",
+        "headers": [
+          {
+            "key": "x-common",
+            "value": "redirect"
+          }
+        ]
+      }
+    ]
+  }
+}
