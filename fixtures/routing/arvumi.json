@@ -4,7 +4,7 @@
     "redirects": [
       {
         "source": "/old",
-        "destination": "/about",
+        "destination": "/changed",
         "status": 308
       },
       {
@@ -54,7 +54,7 @@
         "headers": [
           {
             "key": "x-fixture-policy",
-            "value": "v1"
+            "value": "v2"
           }
         ]
       },
