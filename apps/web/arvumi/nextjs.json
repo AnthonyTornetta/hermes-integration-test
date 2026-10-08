@@ -15,7 +15,7 @@
   "crons": [
     {
       "path": "/api/cron/tick",
-      "schedule": "*/5 * * * *"
+      "schedule": "* * * * *"
     },
     {
       "path": "/api/cron/redirect",
