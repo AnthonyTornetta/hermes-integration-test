@@ -1,0 +1,1 @@
+Dedicated node streaming acceptance fixture. Select root `fixtures/stream`, output `site`, no install/build command. Route `/api/stream` returns worker identity; query modes exercise binary streams, SSE, cancellation, timeout, errors, overflow and bodyless responses. Cron uses the explicitly allowed CRON_SECRET snapshot.
