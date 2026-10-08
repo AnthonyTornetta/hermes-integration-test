@@ -3,20 +3,19 @@
   "runtime": "node",
   "routes": [
     {
-      "path": "/api/hello",
-      "entrypoint": "hello.js"
-    },
-    {
-      "path": "/api/500",
-      "entrypoint": "500.js"
-    },
-    {
-      "path": "/api/loop",
-      "entrypoint": "loop.js",
+      "path": "/api/cron",
+      "entrypoint": "cron.cjs",
+      "env": [
+        "CRON_SECRET"
+      ],
       "settings": {
-        "max_concurrency": 10,
-        "timeout_seconds": 60
+        "max_concurrency": 1
       }
+    },
+    {
+      "path": "/api/unrelated",
+      "entrypoint": "unrelated.cjs",
+      "env": []
     }
   ]
 }
