@@ -1,1 +1,1 @@
-shared-asset-one
+shared-asset-two
