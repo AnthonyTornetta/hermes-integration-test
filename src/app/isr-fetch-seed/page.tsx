@@ -1,0 +1,1 @@
+export default async function Page(){const value=await fetch('data:text/plain,build-fetch-seed',{cache:'force-cache',next:{tags:['fetch-seed'],revalidate:3600}}).then(r=>r.text());return <output id="seed">{value}</output>;}
