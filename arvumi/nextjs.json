@@ -18,6 +18,9 @@
     },
     "proxy": {
       "maxReplicas": 1
+    },
+    "images": {
+      "maxReplicas": 1
     }
   }
 }

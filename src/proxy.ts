@@ -7,6 +7,10 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
   if (path === '/proxy-direct') return new Response(`direct:${req.method}:${req.headers.get('host')}`, {status: 202, headers:{'x-proxy':'direct'}});
   if (path === '/proxy-body') return req.text().then(body=>new Response(`${req.method}:${body}`, {headers:{'x-proxy':'body'}}));
   if (path === '/proxy-redirect') return NextResponse.redirect(new URL('/actions-static', req.url));
+  if (path === '/image-alias') return NextResponse.rewrite(new URL('/sample.png', req.url));
+  if (path === '/image-redirect') return NextResponse.redirect(new URL('/sample.png', req.url));
+  if (path === '/image-direct') return new Response('not an image');
+  if (path === '/protected.png' && req.cookies.get('proxy-auth')?.value !== 'yes') return new Response('image auth required', {status:401});
   if (path === '/proxy-external') return NextResponse.rewrite(new URL('https://example.com/'));
   if (path === '/proxy-to-slash') return NextResponse.rewrite(new URL('/proxy-target/?rewritten=yes', req.url));
   if (path === '/proxy-to-static') return NextResponse.rewrite(new URL('/actions-static', req.url));
@@ -31,7 +35,7 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
   if(path === '/proxy-wait') event.waitUntil(new Promise(resolve=>setTimeout(resolve,200)));
   return res;
 }
-export const config = {matcher:[
+export const config = {matcher:['/protected.png', '/image-alias', '/image-redirect', '/image-direct', 
   '/actions-static', '/actions/:path*', '/action-result', '/protected.txt', '/proxy-(.*)', '/api/proxy-echo', '/files/secret',
   {source:'/conditional',has:[{type:'header',key:'x-condition',value:'yes'}],missing:[{type:'cookie',key:'skip-proxy'}]},
   {source:'/host-match',has:[{type:'host',value:'.+'}]},
