@@ -4,7 +4,10 @@
   "routes": [
     {
       "path": "/api/tick",
-      "entrypoint": "tick.js"
+      "entrypoint": "tick.js",
+      "env": [
+        "CRON_SECRET"
+      ]
     }
   ]
 }
