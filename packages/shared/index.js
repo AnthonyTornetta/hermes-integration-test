@@ -1,1 +1,1 @@
-module.exports = 'shared-v1';
+module.exports = 'shared-v2';
