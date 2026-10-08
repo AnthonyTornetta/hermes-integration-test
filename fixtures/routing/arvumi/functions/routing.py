@@ -4,6 +4,7 @@ def handler(req):
  global calls
  calls+=1
  run=req['headers'].get('x-cron-run-id')
+ if run and req['path']!='/api/cron': return {'status':409,'body':'cron retargeted'}
  if run and req['headers'].get('authorization')!='Bearer '+os.environ['CRON_SECRET']: return {'status':401,'body':'unauthorized'}
  data={'language':'python','path':req['path'],'query':req['query'],'method':req['method'],'calls':calls,'pid':os.getpid(),'run':run,'internal':[k for k in req['headers'] if k.startswith(('x-arvumi-','x-edge-'))]}
  if req['query']=='stream=1':
