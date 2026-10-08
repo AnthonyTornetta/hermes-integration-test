@@ -1,0 +1,1 @@
+Dedicated shared-routing acceptance fixture. Public routing is v1. Cron calls /api/cron directly despite its public redirect. Static and function path collisions are intentional. Configure a private CRON_SECRET and pause the fixture schedule after testing.
