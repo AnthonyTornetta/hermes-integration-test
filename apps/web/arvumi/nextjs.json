@@ -7,6 +7,9 @@
     },
     "proxy": {
       "maxReplicas": 1
+    },
+    "rendering": {
+      "maxReplicas": 1
     }
   },
   "crons": [
