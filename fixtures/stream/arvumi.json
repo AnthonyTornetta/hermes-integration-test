@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "crons": [
+    {
+      "path": "/api/stream",
+      "schedule": "0 0 1 1 *"
+    }
+  ]
+}

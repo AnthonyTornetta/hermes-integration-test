@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "runtime": "python",
+  "routes": [
+    {
+      "path": "/api/stream",
+      "entrypoint": "stream.py",
+      "env": [
+        "CRON_SECRET"
+      ],
+      "settings": {
+        "max_concurrency": 1,
+        "timeout_seconds": 4,
+        "cpu_millis": 500,
+        "memory_mib": 256
+      }
+    }
+  ]
+}
