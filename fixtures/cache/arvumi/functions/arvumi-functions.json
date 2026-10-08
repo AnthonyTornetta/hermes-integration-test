@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "runtime": "node",
+  "routes": [
+    {
+      "path": "/api/a",
+      "entrypoint": "cache.cjs",
+      "env": [
+        "FIXTURE_SECRET",
+        "GROUP_A"
+      ],
+      "settings": {
+        "max_concurrency": 1,
+        "timeout_seconds": 8,
+        "cpu_millis": 500,
+        "memory_mib": 256
+      }
+    },
+    {
+      "path": "/api/b",
+      "entrypoint": "cache.cjs",
+      "env": [
+        "FIXTURE_SECRET",
+        "GROUP_B"
+      ],
+      "settings": {
+        "max_concurrency": 1,
+        "timeout_seconds": 8,
+        "cpu_millis": 500,
+        "memory_mib": 256
+      }
+    }
+  ]
+}
