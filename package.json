@@ -1,0 +1,12 @@
+{
+  "name": "arvumi-generic-cache-fixture",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "webpack": "5.111.1"
+  }
+}
