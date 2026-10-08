@@ -1,6 +1,10 @@
 {
   "version": 1,
-  "buildCache": false,
+  "buildCache": {
+    "paths": [
+      ".cache/webpack"
+    ]
+  },
   "crons": [
     {
       "path": "/api/tick",
