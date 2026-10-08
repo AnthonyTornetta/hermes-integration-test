@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse, NextFetchEvent } from 'next/server';
 export function proxy(req: NextRequest, event: NextFetchEvent) {
   const path = req.nextUrl.pathname;
+  if (path === '/_next/image' && req.headers.get('x-image-private') === 'yes' && req.cookies.get('proxy-auth')?.value !== 'yes') return new Response('optimizer auth required', {status:401});
   if (path === '/proxy-error') throw new Error('fixture proxy failure');
   if (path === '/proxy-wait-error') { event.waitUntil(Promise.reject(new Error('fixture background failure'))); return NextResponse.next(); }
   if (path === '/proxy-large') return new Response('x'.repeat(1024*1024+1));
@@ -35,7 +36,7 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
   if(path === '/proxy-wait') event.waitUntil(new Promise(resolve=>setTimeout(resolve,200)));
   return res;
 }
-export const config = {matcher:['/protected.png', '/image-alias', '/image-redirect', '/image-direct', 
+export const config = {matcher:['/_next/image', '/protected.png', '/image-alias', '/image-redirect', '/image-direct', 
   '/actions-static', '/actions/:path*', '/action-result', '/protected.txt', '/proxy-(.*)', '/api/proxy-echo', '/files/secret',
   {source:'/conditional',has:[{type:'header',key:'x-condition',value:'yes'}],missing:[{type:'cookie',key:'skip-proxy'}]},
   {source:'/host-match',has:[{type:'host',value:'.+'}]},
