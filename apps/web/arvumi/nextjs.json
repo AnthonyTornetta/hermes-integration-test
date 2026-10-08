@@ -12,30 +12,5 @@
       "maxReplicas": 1
     }
   },
-  "crons": [
-    {
-      "path": "/api/cron/tick",
-      "schedule": "* * * * *"
-    },
-    {
-      "path": "/api/cron/redirect",
-      "schedule": "0 0 29 2 *"
-    },
-    {
-      "path": "/api/cron/fail",
-      "schedule": "0 0 29 2 *"
-    },
-    {
-      "path": "/api/cron/slow",
-      "schedule": "0 0 29 2 *"
-    },
-    {
-      "path": "/api/cron/blocked",
-      "schedule": "0 0 29 2 *"
-    },
-    {
-      "path": "/api/cron/large",
-      "schedule": "0 0 29 2 *"
-    }
-  ]
+  "crons": []
 }
