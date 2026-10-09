@@ -1,0 +1,75 @@
+{
+  "buildCache": false,
+  "routing": {
+    "headers": [
+      {
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store"
+          }
+        ],
+        "source": "/media/nocache.png"
+      }
+    ],
+    "redirects": [
+      {
+        "destination": "/media/opaque.png",
+        "source": "/media/allowed",
+        "status": 307
+      },
+      {
+        "destination": "/blocked.png",
+        "source": "/media/denied",
+        "status": 307
+      },
+      {
+        "destination": "https://127.0.0.1/arvumi-image-test.png",
+        "source": "/media/private",
+        "status": 307
+      },
+      {
+        "destination": "/media/loop",
+        "source": "/media/loop",
+        "status": 307
+      },
+      {
+        "destination": "/_arvumi/image",
+        "source": "/media/recurse",
+        "status": 307
+      },
+      {
+        "destination": "/_next/image",
+        "source": "/media/next-recurse",
+        "status": 307
+      },
+      {
+        "destination": "/media/hop-1",
+        "source": "/media/hop-0",
+        "status": 307
+      },
+      {
+        "destination": "/media/hop-2",
+        "source": "/media/hop-1",
+        "status": 307
+      },
+      {
+        "destination": "/media/hop-3",
+        "source": "/media/hop-2",
+        "status": 307
+      },
+      {
+        "destination": "/media/hop-4",
+        "source": "/media/hop-3",
+        "status": 307
+      },
+      {
+        "destination": "/media/opaque.png",
+        "source": "/media/hop-4",
+        "status": 307
+      }
+    ],
+    "rewrites": []
+  },
+  "version": 1
+}
