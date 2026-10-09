@@ -1,0 +1,124 @@
+{
+  "buildCache": false,
+  "images": {
+    "formats": [
+      "image/webp",
+      "image/avif"
+    ],
+    "maximumRedirects": 3,
+    "minimumCacheTTL": 3600,
+    "qualities": [
+      60,
+      75
+    ],
+    "remotePatterns": [
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/media/**",
+        "protocol": "https"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/_arvumi/**",
+        "protocol": "https"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/_next/**",
+        "protocol": "https"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/api/slow",
+        "protocol": "https",
+        "search": "?case=exit-api"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/api/slow",
+        "protocol": "https",
+        "search": "?case=exit-nbg1"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/api/slow",
+        "protocol": "https",
+        "search": "?case=exit-hel1"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/api/slow",
+        "protocol": "https",
+        "search": "?case=deadline-api"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/api/slow",
+        "protocol": "https",
+        "search": "?case=deadline-nbg1"
+      },
+      {
+        "hostname": "images-origin-20af348dc1.arvumi.com",
+        "pathname": "/api/slow",
+        "protocol": "https",
+        "search": "?case=deadline-hel1"
+      }
+    ],
+    "widths": [
+      6,
+      12,
+      24
+    ]
+  },
+  "routing": {
+    "headers": [
+      {
+        "headers": [
+          {
+            "key": "X-Fixture-Policy",
+            "value": "images-v1"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "inline"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src *"
+          }
+        ],
+        "source": "/_arvumi/image"
+      }
+    ],
+    "redirects": [
+      {
+        "destination": "/media/opaque.png",
+        "source": "/source-redirect.png",
+        "status": 307
+      }
+    ],
+    "rewrites": [
+      {
+        "destination": "/media/opaque.png",
+        "source": "/source-alias.png"
+      },
+      {
+        "destination": "/chain-two.png",
+        "source": "/chain-one.png"
+      },
+      {
+        "destination": "/media/opaque.png",
+        "source": "/chain-two.png"
+      },
+      {
+        "destination": "/api/fixture",
+        "source": "/function-source.png"
+      }
+    ]
+  },
+  "version": 1
+}
