@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "entrypoint": "consumer.cjs",
+      "env": [
+        "FIXTURE_SECRET"
+      ],
+      "path": "/api/fixture",
+      "settings": {
+        "cpu_millis": 100,
+        "max_concurrency": 1,
+        "memory_mib": 512,
+        "timeout_seconds": 10
+      }
+    }
+  ],
+  "runtime": "node",
+  "version": 1
+}
