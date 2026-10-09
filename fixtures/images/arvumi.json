@@ -1,0 +1,54 @@
+{
+  "buildCache": false,
+  "routing": {
+    "headers": [
+      {
+        "headers": [
+          {
+            "key": "X-Fixture-Policy",
+            "value": "images-v1"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "inline"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src *"
+          }
+        ],
+        "source": "/_arvumi/image"
+      }
+    ],
+    "redirects": [
+      {
+        "destination": "/media/opaque.png",
+        "source": "/source-redirect.png",
+        "status": 307
+      }
+    ],
+    "rewrites": [
+      {
+        "destination": "/media/opaque.png",
+        "source": "/source-alias.png"
+      },
+      {
+        "destination": "/chain-two.png",
+        "source": "/chain-one.png"
+      },
+      {
+        "destination": "/media/opaque.png",
+        "source": "/chain-two.png"
+      },
+      {
+        "destination": "/api/fixture",
+        "source": "/function-source.png"
+      }
+    ]
+  },
+  "version": 1
+}
