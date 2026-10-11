@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "runtime": "node",
+  "routes": [
+    {
+      "path": "/api/accounting",
+      "entrypoint": "accounting.cjs",
+      "env": [],
+      "settings": {
+        "max_concurrency": 1,
+        "timeout_seconds": 10,
+        "cpu_millis": 100,
+        "memory_mib": 512
+      }
+    }
+  ]
+}
