@@ -4,8 +4,8 @@ This dependency-free fixture generates four 60 MiB files (240 MiB total) for a
 successful build-output transfer through Arvumi's existing Kubernetes path.
 Generated files are ignored and are not part of the source checkout.
 
-Configure a dedicated static project with repository root `.`, no install
-command, build command `node build.mjs`, and output directory `dist`.
+Configure a dedicated static project with repository root `.`, install
+command `true` (explicit no-op, preventing the default npm install), build command `node build.mjs`, and output directory `dist`.
 `arvumi.json` disables compiler caching. No secrets or environment values are
 needed. The build refuses an existing `dist` path; use a fresh checkout.
 
