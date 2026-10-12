@@ -36,3 +36,8 @@ loads the external workspace production package and its data file. Both apps
 declare `/fixture.png` as the local source for `/_arvumi/image`. Reproduce the
 24x12 raster with `python3 -B fixtures/make-raster.py`. Local packaged checks do
 not establish browser navigation or deployed image optimization acceptance.
+
+Browser fixtures expose document-instance and hydration data attributes. The
+primary form uses Kit enhancement; the unchecked “Include unexpected field”
+control exercises strict server validation. The separate plain form exercises
+ordinary document POST. Browser and deployed acceptance are recorded separately.
