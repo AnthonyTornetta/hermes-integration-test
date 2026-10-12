@@ -1,0 +1,1 @@
+svelte-workspace-package-data

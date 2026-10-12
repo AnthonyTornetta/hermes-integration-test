@@ -29,3 +29,10 @@ for installed workspace packages, so this keeps sibling application source and
 build configuration out of the runtime archive. The selected application build
 and explicit runtime file are captured separately. Kit 3 library imports use
 the package `imports` mapping for `#lib/*`.
+
+Additional serving coverage: `/navigation` is a normal Svelte client-navigation
+page; `/cookies` sets two harmless secure fixture cookies; `/lazy` dynamically
+loads the external workspace production package and its data file. Both apps
+declare `/fixture.png` as the local source for `/_arvumi/image`. Reproduce the
+24x12 raster with `python3 -B fixtures/make-raster.py`. Local packaged checks do
+not establish browser navigation or deployed image optimization acceptance.

@@ -19,5 +19,8 @@
   },
   "files": [
     "build"
-  ]
+  ],
+  "dependencies": {
+    "@arvumi-fixture/data": "1.0.0"
+  }
 }

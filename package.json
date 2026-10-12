@@ -15,12 +15,16 @@
     "@opentelemetry/api": "^1.0.0"
   },
   "workspaces": [
-    "apps/site"
+    "apps/site",
+    "packages/fixture-data"
   ],
   "imports": {
     "#lib/*": "./src/lib/*"
   },
   "files": [
     "build"
-  ]
+  ],
+  "dependencies": {
+    "@arvumi-fixture/data": "1.0.0"
+  }
 }

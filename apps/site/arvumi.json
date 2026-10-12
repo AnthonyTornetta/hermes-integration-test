@@ -34,5 +34,23 @@
         ]
       }
     ]
+  },
+  "images": {
+    "widths": [
+      6,
+      12,
+      24
+    ],
+    "qualities": [
+      60,
+      75
+    ],
+    "formats": [
+      "image/webp",
+      "image/avif"
+    ],
+    "minimumCacheTTL": 60,
+    "maximumRedirects": 3,
+    "remotePatterns": []
   }
 }
