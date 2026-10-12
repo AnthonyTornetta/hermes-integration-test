@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "serving": {
+    "groups": {
+      "app": {
+        "memory_mib": 512
+      }
+    },
+    "runtimeFiles": [
+      "fixtures/runtime.txt"
+    ]
+  },
+  "crons": [
+    {
+      "path": "/jobs/check",
+      "schedule": "0 4 * * *"
+    }
+  ],
+  "routing": {
+    "rewrites": [
+      {
+        "source": "/rewritten",
+        "destination": "/env"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/env",
+        "headers": [
+          {
+            "key": "x-fixture-routing",
+            "value": "svelte-workspace"
+          }
+        ]
+      }
+    ]
+  }
+}
