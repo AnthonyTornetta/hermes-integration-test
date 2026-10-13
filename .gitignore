@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Generated near-limit transfer payload
 /dist/
+/arvumi/
