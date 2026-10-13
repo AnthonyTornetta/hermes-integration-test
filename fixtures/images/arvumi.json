@@ -13,55 +13,19 @@
     ],
     "remotePatterns": [
       {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
+        "hostname": "although-exciting-cast-harper.trycloudflare.com",
         "pathname": "/media/**",
         "protocol": "https"
       },
       {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
+        "hostname": "although-exciting-cast-harper.trycloudflare.com",
         "pathname": "/_arvumi/**",
         "protocol": "https"
       },
       {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
+        "hostname": "although-exciting-cast-harper.trycloudflare.com",
         "pathname": "/_next/**",
         "protocol": "https"
-      },
-      {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
-        "pathname": "/api/slow",
-        "protocol": "https",
-        "search": "?case=exit-api"
-      },
-      {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
-        "pathname": "/api/slow",
-        "protocol": "https",
-        "search": "?case=exit-nbg1"
-      },
-      {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
-        "pathname": "/api/slow",
-        "protocol": "https",
-        "search": "?case=exit-hel1"
-      },
-      {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
-        "pathname": "/api/slow",
-        "protocol": "https",
-        "search": "?case=deadline-api"
-      },
-      {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
-        "pathname": "/api/slow",
-        "protocol": "https",
-        "search": "?case=deadline-nbg1"
-      },
-      {
-        "hostname": "images-origin-03a3b25b8d.arvumi.com",
-        "pathname": "/api/slow",
-        "protocol": "https",
-        "search": "?case=deadline-hel1"
       }
     ],
     "widths": [
