@@ -9,7 +9,11 @@ exports.handler = req => {
     const fd = fs.openSync('/tmp/fill', 'w');
     try {
       const chunk = Buffer.alloc(1024 * 1024, 120);
-      while (written < mib * chunk.length) written += fs.writeSync(fd, chunk);
+      while (written < mib * chunk.length) {
+        const count = fs.writeSync(fd, chunk, 0, Math.min(chunk.length, mib * chunk.length - written));
+        if (!count) throw new Error('zero-progress write');
+        written += count;
+      }
       fs.fsyncSync(fd);
     } catch (e) { error = e.code; } finally { fs.closeSync(fd); }
     return {status:200, body:{written, error}};

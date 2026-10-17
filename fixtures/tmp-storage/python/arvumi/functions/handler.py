@@ -19,7 +19,10 @@ def handler(req):
             with open('/tmp/fill', 'wb', buffering=0) as f:
                 chunk = b'x' * 1048576
                 while written < int(raw) * len(chunk):
-                    written += f.write(chunk)
+                    count = f.write(chunk[:min(len(chunk), int(raw) * len(chunk) - written)])
+                    if not count:
+                        raise RuntimeError('zero-progress write')
+                    written += count
                 os.fsync(f.fileno())
         except OSError as e:
             error = errno.errorcode[e.errno]
