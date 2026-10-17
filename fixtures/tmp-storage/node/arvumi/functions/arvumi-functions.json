@@ -1,0 +1,1 @@
+{"version": 1, "runtime": "node", "routes": [{"path": "/api/test", "entrypoint": "handler.cjs", "env": []}]}
